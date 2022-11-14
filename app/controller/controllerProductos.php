@@ -24,13 +24,23 @@ class controllerProductos{
     public function getProductos ($params = null){
         $params=[ 
             "campo"=>"id_productos",
-            "ordenamiento"=>"asc"
+            "ordenamiento"=>"asc",
+            "limite"=>"18446744073709551610",
+            "contador"=> "0",
         ];
         if(isset($_GET["campo"])){
             $params["campo"]= $_GET["campo"];
         }
         if(isset($_GET["ordenamiento"])){
             $params["ordenamiento"]= $_GET["ordenamiento"];
+        }
+        //paginacion, lo que sirve es para mostrar el listado por paginas
+        if (isset($_GET['limite'])){
+            $params["limite"] = $_GET['limite'];
+            if (isset($_GET['contador'])){
+                $page = (($_GET['contador']-1)*$params["limite"]);
+                $params["contador"] = $page;
+            }
         }
 
         $productos=$this->model->TraerProductos($params);

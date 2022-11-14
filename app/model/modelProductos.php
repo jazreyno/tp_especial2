@@ -14,7 +14,9 @@ class modelProductos{
         $query=$this->db->prepare("SELECT * FROM productos 
                                   INNER JOIN marcas 
                                   on productos.marcas_id = marcas.id_marcas
-                                  order by $params[campo] $params[ordenamiento]");
+                                  order by $params[campo] $params[ordenamiento] 
+                                  LIMIT $params[limite]
+                                 OFFSET $params[contador]");
         $query->execute();
         $productos= $query->fetchAll(PDO::FETCH_OBJ);
      
