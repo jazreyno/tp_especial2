@@ -9,9 +9,12 @@ class modelProductos{
         $this-> db = new PDO('mysql:host=localhost;'.'dbname=db_tpespecial;charset=utf8', 'root', '');
     }
 
-    function TraerProductos(){
+    function TraerProductos($params){
         
-        $query=$this->db->prepare("SELECT * FROM productos INNER JOIN marcas on productos.marcas_id = marcas.id_marcas");
+        $query=$this->db->prepare("SELECT * FROM productos 
+                                  INNER JOIN marcas 
+                                  on productos.marcas_id = marcas.id_marcas
+                                  order by $params[campo] $params[ordenamiento]");
         $query->execute();
         $productos= $query->fetchAll(PDO::FETCH_OBJ);
      
