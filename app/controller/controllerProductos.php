@@ -22,12 +22,13 @@ class controllerProductos{
     }
 
     public function getProductos ($params = null){
+        //se agrega cosas por default para que no  haya error
         $params=[ 
             "campo"=>"id_productos",
             "ordenamiento"=>"asc",
             "limite"=>"18446744073709551610",
             "contador"=> "0",
-        ];
+        ]; 
         if(isset($_GET["campo"])){
             $params["campo"]= $_GET["campo"];
         }
@@ -67,6 +68,7 @@ class controllerProductos{
         else
         $this->view->response ("la tarea del id=$id no existe", 404);
     }
+    // lo que hace esta funcion es ir buscando en la tabla y ir agregando segun lo que pone el usuario 
         public function insertProductos(){
             $productos = $this->getData();
 

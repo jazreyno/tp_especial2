@@ -11,9 +11,9 @@ ejemplo = "http://localhost/tp_especial2/productos?limite=2"
 
 limite=(un número aleatorio para limitar la cantidad de productos que se ven) default: todos'.
 
-ordenamiento(field)= (debe elegir uno de los siguientes campo: id,producto,cantidad,precio) defauld:id'
+ordenamiento(field)= (debe elegir uno de los siguientes campos: id,producto,cantidad,precio) defauld:id'
 
-contador(offset)=(un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limit=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 productos a la vez)) default: 0'.
+contador(offset)=(un número aleatorio para indicar la pagina del listado que se quiere ver dependiendo del límite puesto (ej: "limite=3&offset=2" muestra la segunda página del listado que fue seteado para mostrar de solo a 3 productos a la vez)) default: 0'.
 
 campo(sort) == (asc (ascendente) o desc (descendente)) default: asc'.
 

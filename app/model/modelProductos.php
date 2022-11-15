@@ -16,7 +16,7 @@ class modelProductos{
                                   on productos.marcas_id = marcas.id_marcas
                                   order by $params[campo] $params[ordenamiento] 
                                   LIMIT $params[limite]
-                                 OFFSET $params[contador]");
+                                  OFFSET $params[contador]");
         $query->execute();
         $productos= $query->fetchAll(PDO::FETCH_OBJ);
      
