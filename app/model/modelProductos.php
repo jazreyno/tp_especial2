@@ -14,9 +14,10 @@ class modelProductos{
         $query=$this->db->prepare("SELECT * FROM productos 
                                   INNER JOIN marcas 
                                   on productos.marcas_id = marcas.id_marcas
-                                  order by $params[campo] $params[ordenamiento] 
-                                  LIMIT $params[limite]
-                                  OFFSET $params[contador]");
+                                  WHERE productos.marcas_id = $params[where]
+                                  order by $params[field] $params[sort] 
+                                  LIMIT $params[limit]
+                                  OFFSET $params[offset]");
         $query->execute();
         $productos= $query->fetchAll(PDO::FETCH_OBJ);
      
@@ -56,12 +57,5 @@ class modelProductos{
         $query = $this->db->prepare('DELETE FROM `productos` 
                                     WHERE id_productos = ?');
         $query->execute([$id]);
-    }
-    function editarProductos ($producto, $cantidad,$precio,$marcas, $id){
- 
-        $query=$this->db->prepare ("UPDATE `productos` 
-                                    SET producto = ? , cantidad = ? , precio = ? , marcas_id = ? 
-                                    WHERE id_productos = ?");
-        $query->execute([$producto,$cantidad,$precio,$marcas,$id]);
     }
 }
