@@ -9,6 +9,8 @@ los  productos al lado de 'productos' se debe poner '?' y poner a su vez las 5 o
 
 ejemplo = "http://localhost/tp_especial2/productos?limit=2"
 
+(where)= Se filtra para mostrar estudiantes que pertenecen a una carrera especificando la id de la misma.
+
 (limit)=(un número aleatorio para limitar la cantidad de productos que se ven en nuestra pagina) default: todos'.
 
 (field)= (debe elegir uno de los siguientes campos: id,producto,cantidad,precio) defauld:id'.(lo que hace es indicar el campo por el cual se desea ordenar)
