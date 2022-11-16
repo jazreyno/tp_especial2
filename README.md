@@ -48,3 +48,12 @@ poner un '&' para seperarlas quedado asi:
     15 | carrefour
     16 | casancrem
     24 | la paulina
+
+codigos de error 
+         200 => "OK",
+          201 => "Created",
+          400 => "Bad request",
+          401 => "Unauthorized",
+          403 => "Forbidden",
+          404 => "Not found",
+          500 => "Internal Server Error"

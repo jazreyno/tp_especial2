@@ -36,6 +36,7 @@ class controllerProductos{
         if(isset($_GET["sort"])){
             $params["sort"]= $_GET["sort"];
         }
+        
         if (isset($_GET['limit'])){
             $params["limit"] = $_GET['limit'];
             if (isset($_GET['offset'])){
@@ -51,7 +52,7 @@ class controllerProductos{
     public function getProductosid ($params = null){
         $id = $params[':ID'];
         $productos=$this->model->TraerProductosId($id);
-       
+
        if($productos)
         $this->view->response($productos);
         else
